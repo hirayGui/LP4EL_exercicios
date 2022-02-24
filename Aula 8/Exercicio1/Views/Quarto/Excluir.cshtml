@@ -1,0 +1,64 @@
+﻿@model Exercicio1.Models.Quarto
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Tem certeza que quer excluir este quarto?</h3>
+<div>
+    <h4>Quarto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdQuarto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdQuarto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroQuarto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroQuarto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disponivel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdEstabelecimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdEstabelecimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTipoQuarto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdTipoQuarto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para a lista", "Index")
+        </div>
+    }
+</div>

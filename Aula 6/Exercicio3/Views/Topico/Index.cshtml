@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Forum.Models.Topico>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Tópicos</h2>
+
+<p>
+    @Html.ActionLink("Criar novo topico", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Assunto.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resumo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conteudo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPostagem)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assunto.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resumo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conteudo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPostagem)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdTopico }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdTopico }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdTopico })
+        </td>
+    </tr>
+}
+
+</table>

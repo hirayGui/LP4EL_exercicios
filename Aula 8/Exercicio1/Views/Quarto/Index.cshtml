@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Exercicio1.Models.Quarto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Inserir quarto", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdQuarto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroQuarto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdEstabelecimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdTipoQuarto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdQuarto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroQuarto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponivel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdEstabelecimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdTipoQuarto)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Excluir", "Excluir", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

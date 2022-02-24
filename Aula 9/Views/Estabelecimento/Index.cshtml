@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Exercicio1.Models.Estabelecimento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de estabelecimentos</h2>
+
+<p>
+    @Html.ActionLink("Inserir estabelecimento", "Inserir")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdEstabelecimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeComercial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CNPJ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaginaWeb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdCategoria)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdEstabelecimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeComercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CNPJ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaginaWeb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdCategoria)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Alterar", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Excluir", "Excluir", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Exercicio1.Models.Quarto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Quartos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroQuarto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponivel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estabelecimento.NomeComercial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoQuarto.Descricao)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroQuarto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disponivel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estabelecimento.NomeComercial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoQuarto.Descricao)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdQuarto }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdQuarto }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdQuarto })
+        </td>
+    </tr>
+}
+
+</table>

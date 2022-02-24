@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hospedagem Online- @ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <style>
+        body {padding-top: 60px;}
+    </style>
+</head>
+
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-brand pr-2">
+                    Hospedagem Online&emsp;@Html.ActionLink("Home", "Index", "Home")&emsp;@Html.ActionLink("Tipos de Quarto", "Index", "TipoQuarto")&emsp;@Html.ActionLink("Categorias", "Index", "Categoria")&emsp;@Html.ActionLink("Cidades", "Index", "Cidade")&emsp;@Html.ActionLink("Estabelecimentos", "Index", "Estabelecimento")&emsp;@Html.ActionLink("Quartos", "Index", "Quarto")&emsp;@Html.ActionLink("Tipos de Quarto", "Index", "TipoQuarto")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <script src="@Url.Content("~/Scripts/jquery-3.5.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
